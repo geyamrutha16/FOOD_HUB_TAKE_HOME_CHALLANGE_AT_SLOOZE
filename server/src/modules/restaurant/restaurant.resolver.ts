@@ -32,4 +32,3 @@ export class RestaurantResolver {
     return restaurant;
   }
 }
-// No export statement needed - RestaurantService is already exported from restaurant.service.ts
