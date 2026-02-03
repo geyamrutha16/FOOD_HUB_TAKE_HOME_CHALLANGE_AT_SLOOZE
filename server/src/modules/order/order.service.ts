@@ -78,7 +78,7 @@ export class OrderService {
   async getUserOrders(userId: string) {
     const orders = await this.orderModel
       .find({ userId: new Types.ObjectId(userId) })
-      .populate("items.menuItemId") // 🔥 THIS IS THE KEY
+      .populate("items.menuItemId")
       .exec();
 
     return orders.map((order) => ({
