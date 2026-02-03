@@ -36,7 +36,6 @@ export class RestaurantService {
     );
   }
 
-  // Update to match the resolver call (only accepts id)
   async getRestaurantById(id: string) {
     const restaurant = await this.restaurantModel.findById(id).exec();
     
@@ -60,4 +59,3 @@ export class RestaurantService {
     };
   }
 }
-// No need for additional export - the class is already exported
