@@ -461,8 +461,3 @@ curl -X POST http://localhost:4000/graphql \
 - Implement review & ratings
 - Add analytics dashboard for admins
 
-## License
-
-All Rights Reserved © 2026 SLOOZE
-
-For questions: careers@slooze.xyz
