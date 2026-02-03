@@ -1,0 +1,49 @@
+# Server specific
+server/node_modules/
+server/dist/
+server/.env
+server/.env.local
+
+# Client specific (already has its own .gitignore, but add here too)
+client/node_modules/
+client/.next/
+client/out/
+client/build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Optional: keep package-lock.json but ignore others
+# !package-lock.json
+
+# Temporary files
+*.tmp
+*.temp
+
+# Coverage directory used by tools like istanbul
+coverage/
+.nyc_output/
+
+# Optional npm cache directory
+.npm
