@@ -16,7 +16,6 @@ import { CurrentUser } from "../../common/decorators/current-user.decorator";
 export class OrderResolver {
   constructor(private readonly orderService: OrderService) {}
 
-  // 🟢 CREATE ORDER (any logged-in user)
   @Mutation(() => OrderDto)
   async createOrder(
     @CurrentUser() user: any,
@@ -26,19 +25,16 @@ export class OrderResolver {
     return this.orderService.createOrder(user.id, user.country, items);
   }
 
-  // 🟢 GET MY ORDERS (LIST)
   @Query(() => [OrderDto])
   async orders(@CurrentUser() user: any) {
     return this.orderService.getUserOrders(user.id);
   }
 
-  // 🟢 GET MY ORDERS
   @Query(() => OrderDto)
   async order(@Args("id") id: string, @CurrentUser() user: any) {
     return this.orderService.getOrderById(id, user.id, user.country);
   }
 
-  // 🔴 CHECKOUT (ADMIN / MANAGER only)
   @Mutation(() => OrderDto)
   @UseGuards(RolesGuard)
   @Roles("ADMIN", "MANAGER")
@@ -49,7 +45,6 @@ export class OrderResolver {
     return this.orderService.checkoutOrder(orderId, user.id, user.country);
   }
 
-  // 🔴 CANCEL (ADMIN / MANAGER only)
   @Mutation(() => OrderDto)
   @UseGuards(RolesGuard)
   @Roles("ADMIN", "MANAGER")
